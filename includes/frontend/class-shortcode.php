@@ -12,7 +12,7 @@ class Shortcode
     }
 
     public function render_logos($atts, $content = '')
-    {
+    { 
         ob_start();
         // Query custom post type of simple-logo-slider
         $args = [
@@ -20,7 +20,7 @@ class Shortcode
             'orderby'   => 'menu_order',
             'order'     => 'ASC'
         ];
-        $my_query = new WP_Query($args);
+        $my_query = new \WP_Query($args);
         ?>
         <div class="simple-logo-slider-container">
             <?php
