@@ -29,7 +29,8 @@
     justify-content: center;
     align-items: center;
 }
-.simple-logo-slider-item-image{
+
+.simple-logo-slider-item-image {
     background-color: #fff;
     padding: 3px;
     border-radius: 70px;
@@ -77,22 +78,6 @@
 .simple-logo-slider-wrapper {
     position: relative;
     z-index: 1;
-}
-
-/* Title Styling */
-.simple-logo-slider-item-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-/* Description Styling */
-.simple-logo-slider-item-description {
-    font-size: 0.9rem;
-    color: #555;
-    text-align: center;
-    margin: 0;
 }
 
 /* Media Queries for Responsiveness */
