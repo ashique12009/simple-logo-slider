@@ -15,7 +15,7 @@ Logo slider.
 
 Simple logo slider. 
 
-The shortcode is: [simple_log_slider]
+The shortcode is: [simple_logo_slider]
 
 == Frequently Asked Questions ==
 
