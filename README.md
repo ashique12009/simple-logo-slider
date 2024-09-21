@@ -1,4 +1,4 @@
-=== Most read posts in X days ===
+=== Simple Logo Slider ===
 Contributors: ashique12009
 Donate link: https://example.com/
 Tags: logo-slider, slider, post slider
