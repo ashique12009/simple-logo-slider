@@ -23,7 +23,6 @@ class Shortcode
         $my_query = new \WP_Query($args);
         ?>
             <div class="simple-logo-slider-wrapper">
-                <!-- Left Arrow Outside -->
                 <button class="slider-control-left">&lt;</button>
                 
                 <div class="simple-logo-slider-inner">
@@ -53,7 +52,6 @@ class Shortcode
                     </div>
                 </div>
 
-                <!-- Right Arrow Outside -->
                 <button class="slider-control-right">&gt;</button>
             </div>
         <?php 

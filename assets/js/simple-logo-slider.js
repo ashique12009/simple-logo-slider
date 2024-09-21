@@ -5,8 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const prevBtn = document.querySelector('.slider-control-left');
     const nextBtn = document.querySelector('.slider-control-right');
 
+    // Calculate the width of simple-logo-slider-wrapper
+    const sliderWrapper = document.querySelector('.simple-logo-slider-wrapper');
+    const sliderWrapperWidth = sliderWrapper.offsetWidth;
+    console.log('sliderWrapperWidth', sliderWrapperWidth);
+    // slider.style.width = `${sliderWrapperWidth}px`;
+
     let currentIndex = 0;
-    const itemWidth = items[0].offsetWidth + 20; // Including the gap (20px)
+    const itemWidth = items[0].offsetWidth + 16; // Including the gap (16px)
 
     // Clone first and last items for infinite effect
     const firstClone = items[0].cloneNode(true);

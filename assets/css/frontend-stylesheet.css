@@ -3,7 +3,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
     padding: 20px 0;
 }
@@ -19,12 +19,12 @@
 .simple-logo-slider-container {
     display: flex;
     transition: transform 0.5s ease;
-    gap: 20px;
+    gap: 16px;
 }
 
 /* Slider Item */
 .simple-logo-slider-item {
-    flex: 0 0 25%; /* 4 items per row by default on large screens */
+    flex: 0 0 33%; /* 4 items per row by default on large screens */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +42,10 @@
     height: 140px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.simple-logo-slider-item-image a{
+    box-shadow: none !important;
 }
 
 /* Left and Right Control Button Styling */
@@ -70,8 +74,8 @@
 }
 
 .slider-control-left:hover, .slider-control-right:hover {
-    background-color: transparent;
-    text-decoration: none;
+    background-color: transparent !important;
+    text-decoration: none !important;
 }
 
 /* Ensure Z-Index works correctly for arrows on top */
