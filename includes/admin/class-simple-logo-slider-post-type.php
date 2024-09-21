@@ -42,7 +42,7 @@ class SimpleLogoPostType {
             'has_archive'        => true,
             'hierarchical'       => false,
             'menu_position'      => null,
-            'supports'           => array( 'title', 'thumbnail', 'excerpt', 'custom-fields' ),
+            'supports'           => array( 'title', 'thumbnail', 'custom-fields' ),
             'show_in_rest'       => true, // Enable Gutenberg editor support
         );
 

@@ -54,21 +54,7 @@ class SimpleLogoSlider
 
     public function activate()
     {
-        // global $wpdb;
-
-        // $table_prefix = $wpdb->prefix;
-
-        // $table_sql = 'CREATE TABLE `'.$table_prefix.'postnewsletter_emails` (
-        //     `id` int NOT NULL AUTO_INCREMENT,
-        //     `email_address` text NOT NULL,
-        //     `ip` varchar(128) NOT NULL,
-        //     `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        //     PRIMARY KEY (`id`)
-        //   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci';
-
-        // include_once ABSPATH . 'wp-admin/includes/upgrade.php';
-
-        // dbDelta($table_sql);
+        
     }
 
     public function class_initialize()
@@ -89,14 +75,6 @@ class SimpleLogoSlider
                 include_once SIMPLE_LOGO_SLIDER_PLUGIN_PATH . '/includes/admin/class-simple-logo-slider-post-type.php';
                 new \SimpleLogoSlider\Admin\SimpleLogoPostType();
             }
-            // if (!class_exists('\Post_News_Letter\Admin\Subscriber_Queries')) {
-            //     require_once POST_NEWS_LETTER_PLUGIN_PATH . '/includes/Admin/Subscriber_Queries.php';
-            //     new \Post_News_Letter\Admin\Subscriber_Queries();
-            // }
-            // if (!class_exists('\Post_News_Letter\Admin\Send_Post_Email')) {
-            //     require_once POST_NEWS_LETTER_PLUGIN_PATH . '/includes/Admin/Send_Post_Email.php';
-            //     new \Post_News_Letter\Admin\Send_Post_Email();
-            // }
         }
         else {
             if (!class_exists('\SimpleLogoSlider\Frontend\FrontendInitializer')) {

@@ -22,36 +22,40 @@ class Shortcode
         ];
         $my_query = new \WP_Query($args);
         ?>
-        <div class="simple-logo-slider-container">
-            <?php
-            while ($my_query->have_posts())
-            {
-                $my_query->the_post();
-                $post_id = get_the_ID();
-                $post_title = get_the_title($post_id);
-                $post_content = get_the_content($post_id);
-                // Get featured image
-                $image_id = get_post_thumbnail_id($post_id);
-                $image_url = wp_get_attachment_image_src($image_id, 'full', true);
-                $image = $image_url[0];
-                ?>
-                <div class="simple-logo-slider-item">
-                    <div class="simple-logo-slider-item-image">
-                        <img src="<?php echo $image; ?>" alt="Logo">
+            <div class="simple-logo-slider-wrapper">
+                <!-- Left Arrow Outside -->
+                <button class="slider-control-left">&lt;</button>
+                
+                <div class="simple-logo-slider-inner">
+                    <div class="simple-logo-slider-container">
+                        <?php
+                        while ($my_query->have_posts()) {
+                            $my_query->the_post();
+                            $post_id = get_the_ID();
+                            $logo_url = get_post_meta($post_id, 'logo_url', true);
+                            $image_id = get_post_thumbnail_id($post_id);
+                            $image_url = wp_get_attachment_image_src($image_id, 'full', true);
+                            $image = $image_url[0];
+
+                            // Ensure logo_url is treated as absolute URL if it's not empty and doesn't start with http or https
+                            if ($logo_url && !preg_match("/^https?:\/\//", $logo_url)) {
+                                $logo_url = '//' . $logo_url; // Adds protocol-relative URL (no http/https by default)
+                            }
+                            ?>
+                            <div class="simple-logo-slider-item">
+                                <div class="simple-logo-slider-item-image">
+                                    <a href="<?php echo esc_url($logo_url); ?>" target="_blank"><img src="<?php echo $image; ?>" alt="Logo"></a>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
-                    <div class="simple-logo-slider-item-content">
-                        <h3 class="simple-logo-slider-item-title">
-                            <?php echo $post_title; ?>
-                        </h3>
-                        <p class="simple-logo-slider-item-description">
-                            <?php echo $post_content; ?>
-                        </p>
-                    </div>
-                </div>  
-                <?php
-            }
-            ?>
-        </div>
+                </div>
+
+                <!-- Right Arrow Outside -->
+                <button class="slider-control-right">&gt;</button>
+            </div>
         <?php 
 
         $content = ob_get_clean();

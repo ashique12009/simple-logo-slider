@@ -1,3 +1,162 @@
-.simple-logo-slider-container{
+/* Wrapper Styling */
+.simple-logo-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Inner Slider Container */
+.simple-logo-slider-inner {
+    overflow: hidden;
+    width: 100%;
+    position: relative; /* For proper positioning of container */
+}
+
+/* Slider Container */
+.simple-logo-slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+}
+
+/* Slider Item */
+.simple-logo-slider-item {
+    flex: 0 0 25%; /* 4 items per row by default on large screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.simple-logo-slider-item-image{
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 70px;
+}
+
+/* Image Styling */
+.simple-logo-slider-item-image img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Left and Right Control Button Styling */
+.slider-control-left, .slider-control-right {
+    background-color: transparent;
+    color: blue;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 7rem;
+    font-weight: 100;
+    z-index: 10; /* Ensure buttons are on top */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+.slider-control-left {
+    left: -70px; /* Positioned outside the slider */
+}
+
+.slider-control-right {
+    right: -70px; /* Positioned outside the slider */
+}
+
+.slider-control-left:hover, .slider-control-right:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* Ensure Z-Index works correctly for arrows on top */
+.simple-logo-slider-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Title Styling */
+.simple-logo-slider-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Description Styling */
+.simple-logo-slider-item-description {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and medium-sized screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .simple-logo-slider-item {
+        flex: 0 0 33.333%; /* 3 items per row on medium screens */
+    }
+
+    .slider-control-left {
+        left: -70px; /* Positioned outside the slider */
+    }
     
+    .slider-control-right {
+        right: -70px; /* Positioned outside the slider */
+    }
+}
+
+/* For smaller tablets and large mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .simple-logo-slider-item {
+        flex: 0 0 50%; /* 2 items per row on smaller screens */
+    }
+
+    /* Adjust arrow positions */
+    .slider-control-left {
+        left: -70px; /* Positioned outside the slider */
+    }
+    
+    .slider-control-right {
+        right: -70px; /* Positioned outside the slider */
+    }
+
+    .slider-control-left {
+        font-size: 5rem; /* Make arrows slightly smaller */
+    }
+
+    .slider-control-right {
+        font-size: 5rem; /* Make arrows slightly smaller */
+    }
+}
+
+/* For mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .simple-logo-slider-item {
+        flex: 0 0 100%; /* 1 item per row on mobile screens */
+    }
+
+    .slider-control-left {
+        left: -10px; /* Positioned outside the slider */
+    }
+    
+    .slider-control-right {
+        right: -10px; /* Positioned outside the slider */
+    }
+
+    .slider-control-left {
+        font-size: 4rem; /* Make arrows even smaller */
+    }
+
+    .slider-control-right {
+        font-size: 4rem; /* Make arrows even smaller */
+    }
+
+    /* Ensure the slider arrows don't overlap too much on smaller screens */
 }
